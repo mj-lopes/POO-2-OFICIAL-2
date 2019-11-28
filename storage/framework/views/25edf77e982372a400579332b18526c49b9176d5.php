@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -13,17 +11,18 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
 
                 
                     <h1> Cadastrar Questão</h1>
             
-                    <form method="POST" action="{{ route('salvarQuestao') }}">
-                        @csrf
+                    <form method="POST" action="<?php echo e(route('salvarQuestao')); ?>">
+                        <?php echo csrf_field(); ?>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Coeficiente A</label>
                                 <input type="text" name="coef_a" class="form-control" id="exampleInputEmail1">                            
@@ -47,7 +46,9 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
             
 
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\marco\Desktop\Nova pasta\bhaskara\resources\views/create.blade.php ENDPATH**/ ?>

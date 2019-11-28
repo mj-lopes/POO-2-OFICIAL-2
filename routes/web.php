@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'FunctionsController@index')->name('listarQuestoes');
-Route::get('/novaQuestao', 'FunctionsController@create')->name('novaQuestao');
-Route::post('/funcao/store', 'FunctionsController@store')->name('salvarQuestao');
+Route::get('/create', 'FunctionsController@create')->name('novaQuestao');
+Route::post('/store', 'FunctionsController@store')->name('salvarQuestao');
